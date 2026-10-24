@@ -1,0 +1,39 @@
+{
+  "profile": {
+    "name": "Emanoel",
+    "tagline": "Onchain Data Analyst | Dashboards for Web3 projects",
+    "bio": "I build interactive onchain analytics dashboards. Explore my recent work below.",
+    "links": {
+      "X": "https://x.com/YOUR_HANDLE",
+      "GitHub": "https://github.com/Emanoel91",
+      "LinkedIn": "",
+      "Dune": ""
+    }
+  },
+  "dashboards": [
+    {
+      "title": "Base Chain Dashboard",
+      "description": "Comprehensive onchain metrics for the Base network.",
+      "url": "https://base-chain.streamlit.app/",
+      "github": "https://github.com/Emanoel91/Base-Chain",
+      "chains": ["Base"],
+      "topics": ["Chain Overview"],
+      "tools": ["Streamlit"],
+      "image": "assets/base-chain.png",
+      "date": "2026-09-01",
+      "featured": true
+    },
+    {
+      "title": "Cryptorank Market Dashboard",
+      "description": "Multi-tab crypto market analytics built on Cryptorank APIs.",
+      "url": "https://example.streamlit.app/",
+      "github": "",
+      "chains": ["Multi-chain"],
+      "topics": ["Market Overview"],
+      "tools": ["Streamlit"],
+      "image": "",
+      "date": "2026-10-01",
+      "featured": true
+    }
+  ]
+}
