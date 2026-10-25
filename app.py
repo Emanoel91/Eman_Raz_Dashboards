@@ -1,11 +1,12 @@
 import json
 from datetime import datetime, timedelta
+from html import escape
 from pathlib import Path
 
 import streamlit as st
 
 st.set_page_config(
-    page_title="Onchain Dashboards Portfolio",
+    page_title="Eman Raz | Onchain Dashboards",
     page_icon="📊",
     layout="wide",
 )
@@ -22,6 +23,8 @@ def load_data():
 data = load_data()
 profile = data["profile"]
 dashboards = data["dashboards"]
+contact = data.get("contact")
+support = data.get("support")
 
 # ---------- Styles ----------
 st.markdown(
@@ -33,7 +36,13 @@ st.markdown(
         background: linear-gradient(135deg, #1B1446 0%, #0F2A4A 55%, #0B0F1A 100%);
         border: 1px solid rgba(124,92,255,.35); margin-bottom: 1.2rem;
     }
-    .hero h1 {margin: 0; font-size: 2.4rem;}
+    .hero-row {display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap;}
+    .avatar {
+        width: 104px; height: 104px; border-radius: 50%; object-fit: cover;
+        border: 3px solid rgba(124,92,255,.8);
+        box-shadow: 0 0 24px rgba(124,92,255,.45);
+    }
+    .hero h1 {margin: 0; padding: 0; font-size: 2.4rem;}
     .hero .tag {color: #A9B4FF; font-size: 1.15rem; margin-top: .3rem;}
     .hero .bio {color: #C9D0E8; margin-top: .8rem;}
     .social a {
@@ -49,8 +58,22 @@ st.markdown(
     .chip.chain {background: rgba(124,92,255,.22); color: #C7B9FF;}
     .chip.topic {background: rgba(0,200,150,.18); color: #8CF2D2;}
     .chip.new {background: rgba(255,170,0,.2); color: #FFD27A;}
-    .card-title {font-size: 1.15rem; font-weight: 700; margin: .4rem 0 .2rem;}
+    .card-title {
+        display: flex; align-items: center; gap: .55rem;
+        font-size: 1.15rem; font-weight: 700; margin: .4rem 0 .2rem;
+    }
+    .card-title img {
+        width: 30px; height: 30px; border-radius: 50%; object-fit: cover;
+        background: #fff1; flex-shrink: 0;
+    }
     .card-desc {color: #AEB6CF; font-size: .9rem; min-height: 2.6rem;}
+    .cta {
+        padding: 1.8rem 2rem; border-radius: 20px; margin: .5rem 0 1rem;
+        background: linear-gradient(135deg, #2A1B6B 0%, #14335C 100%);
+        border: 1px solid rgba(124,92,255,.45);
+    }
+    .cta h3 {margin: 0 0 .5rem; padding: 0; font-size: 1.5rem;}
+    .cta p {color: #D5DAF0; margin: 0; max-width: 820px; line-height: 1.6;}
     div[data-testid="stVerticalBlockBorderWrapper"] {
         border-radius: 16px; transition: transform .15s, box-shadow .15s;
     }
@@ -68,12 +91,22 @@ links_html = "".join(
     for name, url in profile.get("links", {}).items()
     if url
 )
+avatar_html = (
+    f'<img class="avatar" src="{profile["avatar"]}" alt="{escape(profile["name"])}">'
+    if profile.get("avatar")
+    else ""
+)
 st.markdown(
     f"""
     <div class="hero">
-      <h1>{profile['name']}</h1>
-      <div class="tag">{profile['tagline']}</div>
-      <div class="bio">{profile.get('bio', '')}</div>
+      <div class="hero-row">
+        {avatar_html}
+        <div>
+          <h1>{escape(profile['name'])}</h1>
+          <div class="tag">{escape(profile['tagline'])}</div>
+        </div>
+      </div>
+      <div class="bio">{escape(profile.get('bio', ''))}</div>
       <div class="social">{links_html}</div>
     </div>
     """,
@@ -121,15 +154,16 @@ def render_card(d):
         img = d.get("image")
         if img and (BASE / img).exists():
             st.image(str(BASE / img), use_container_width=True)
-        chips = "".join(f'<span class="chip chain">{c}</span>' for c in d.get("chains", []))
-        chips += "".join(f'<span class="chip topic">{t}</span>' for t in d.get("topics", []))
+        chips = "".join(f'<span class="chip chain">{escape(c)}</span>' for c in d.get("chains", []))
+        chips += "".join(f'<span class="chip topic">{escape(t)}</span>' for t in d.get("topics", []))
         if is_new(d):
             chips += '<span class="chip new">New</span>'
+        logo_html = f'<img src="{d["logo"]}" alt="">' if d.get("logo") else ""
         st.markdown(
             f"""
             <div>{chips}</div>
-            <div class="card-title">{d['title']}</div>
-            <div class="card-desc">{d.get('description', '')}</div>
+            <div class="card-title">{logo_html}<span>{escape(d['title'])}</span></div>
+            <div class="card-desc">{escape(d.get('description', ''))}</div>
             """,
             unsafe_allow_html=True,
         )
@@ -167,7 +201,36 @@ if items:
 else:
     st.info("No dashboards match your filters.")
 
-# ---------- Footer ----------
 st.divider()
-x_link = profile.get("links", {}).get("X", "")
-st.caption(f"Want a custom dashboard? DM me on [X]({x_link}).")
+
+# ---------- Contact / CTA ----------
+if contact:
+    st.markdown(
+        f"""
+        <div class="cta">
+          <h3>💼 {escape(contact['title'])}</h3>
+          <p>{escape(contact['text'])}</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    c1, c2, _ = st.columns([1.2, 1.2, 4])
+    c1.link_button(contact["button_label"], contact["button_url"], type="primary", use_container_width=True)
+    li = profile.get("links", {}).get("LinkedIn")
+    if li:
+        c2.link_button("LinkedIn", li, use_container_width=True)
+
+# ---------- Support / Tips ----------
+if support:
+    st.divider()
+    st.subheader(f"☕ {support['title']}")
+    st.write(support["text"])
+    wallets = support.get("wallets", [])
+    for i in range(0, len(wallets), 2):
+        cols = st.columns(2)
+        for col, w in zip(cols, wallets[i : i + 2]):
+            with col:
+                st.caption(f"🔹 {w['coin']}")
+                st.code(w["address"], language=None)  # آیکن کپی خودکار دارد
+
+st.caption("Built with Streamlit · Onchain data analytics by Eman Raz")
