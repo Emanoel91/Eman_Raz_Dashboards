@@ -40,7 +40,7 @@
     {
       "title": "Axelar Mega Dashboard",
       "logo": "https://images.cryptorank.io/coins/150x150.axelar1663924228506.png",
-      "description": "End-to-end visibility into the Axelar ecosystem: a unified platform for tracking, analyzing and evaluating all cross-chain activity across Axelar.",
+      "description": "End-to-end visibility into the Axelar ecosystem.",
       "url": "https://axelar.streamlit.app/",
       "github": "",
       "chains": ["Axelar"],
