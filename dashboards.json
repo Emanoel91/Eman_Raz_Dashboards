@@ -1,39 +1,123 @@
 {
   "profile": {
-    "name": "Emanoel",
-    "tagline": "Onchain Data Analyst | Dashboards for Web3 projects",
-    "bio": "I build interactive onchain analytics dashboards. Explore my recent work below.",
+    "name": "Eman Raz",
+    "tagline": "Onchain Data Analyst since 2021 | Former Flipside Ambassador for Axelar",
+    "bio": "Top 20 Flipside analyst with ~700 onchain dashboards built. Now building interactive Streamlit dashboards for Web3 ecosystems. Explore my recent work below.",
     "links": {
-      "X": "https://x.com/YOUR_HANDLE",
+      "X": "https://x.com/0xeman_raz",
       "GitHub": "https://github.com/Emanoel91",
-      "LinkedIn": "",
-      "Dune": ""
-    }
+      "Dune": "https://dune.com/eman_raz",
+      "LinkedIn": "https://www.linkedin.com/in/eman-raz-5a8874394/"
+    },
+    "stats": [
+      {"label": "Years in onchain analytics", "value": "5+"},
+      {"label": "Flipside dashboards", "value": "~700"},
+      {"label": "Flipside rank", "value": "Top 20"}
+    ]
   },
   "dashboards": [
     {
-      "title": "Base Chain Dashboard",
-      "description": "Comprehensive onchain metrics for the Base network.",
+      "title": "Axelar Mega Dashboard",
+      "description": "End-to-end visibility into the Axelar ecosystem: a unified platform for tracking, analyzing and evaluating all cross-chain activity across Axelar.",
+      "url": "https://axelar.streamlit.app/",
+      "github": "",
+      "chains": ["Axelar"],
+      "topics": ["Cross-chain", "Interoperability"],
+      "tools": ["Streamlit"],
+      "image": "assets/axelar-mega.png",
+      "featured": true
+    },
+    {
+      "title": "Base Blockchain",
+      "description": "A comprehensive review of the Base blockchain.",
       "url": "https://base-chain.streamlit.app/",
       "github": "https://github.com/Emanoel91/Base-Chain",
       "chains": ["Base"],
       "topics": ["Chain Overview"],
       "tools": ["Streamlit"],
       "image": "assets/base-chain.png",
-      "date": "2026-09-01",
       "featured": true
     },
     {
-      "title": "Cryptorank Market Dashboard",
-      "description": "Multi-tab crypto market analytics built on Cryptorank APIs.",
-      "url": "https://example.streamlit.app/",
+      "title": "Ink Chain",
+      "description": "A comprehensive review of the Ink blockchain.",
+      "url": "https://ink-chain.streamlit.app/",
+      "github": "",
+      "chains": ["Ink"],
+      "topics": ["Chain Overview"],
+      "tools": ["Streamlit"],
+      "image": "assets/ink-chain.png",
+      "featured": true
+    },
+    {
+      "title": "Axelarscan",
+      "description": "Cross-chain transfer activity across blockchains integrated through Axelar's interoperability infrastructure.",
+      "url": "https://axelarscan.streamlit.app/",
+      "github": "",
+      "chains": ["Axelar"],
+      "topics": ["Cross-chain", "Interoperability"],
+      "tools": ["Streamlit"],
+      "image": "assets/axelarscan.png"
+    },
+    {
+      "title": "Axelar Master Dashboard",
+      "description": "A comprehensive view of the Axelar ecosystem.",
+      "url": "https://axelar-master-dashboard.streamlit.app/",
+      "github": "",
+      "chains": ["Axelar"],
+      "topics": ["Cross-chain", "Interoperability"],
+      "tools": ["Streamlit"],
+      "image": "assets/axelar-master.png"
+    },
+    {
+      "title": "Blockwatch",
+      "description": "A unified view of key performance, activity and market metrics across multiple blockchains, to monitor critical network statistics.",
+      "url": "https://blockwatch.streamlit.app/",
+      "github": "",
+      "chains": ["Multi-chain"],
+      "topics": ["Chain Overview", "Market Overview"],
+      "tools": ["Streamlit"],
+      "image": "assets/blockwatch.png"
+    },
+    {
+      "title": "Squid",
+      "description": "Squid's cross-chain swap activity: transfer volume and transaction counts into, out of and within each chain, and which chains lead on each metric.",
+      "url": "https://squid-dashboard.streamlit.app/",
+      "github": "",
+      "chains": ["Multi-chain"],
+      "topics": ["Cross-chain", "Bridge"],
+      "tools": ["Streamlit"],
+      "image": "assets/squid.png"
+    },
+    {
+      "title": "Daily Stats on Squid Router",
+      "description": "Performance of the Squid bridge over the past 24 hours, with continuously updated data.",
+      "url": "https://daily-stats-on-squid-router.streamlit.app/",
+      "github": "",
+      "chains": ["Multi-chain"],
+      "topics": ["Cross-chain", "Bridge"],
+      "tools": ["Streamlit"],
+      "image": "assets/squid-daily.png"
+    },
+    {
+      "title": "Crypto-Search Dashboard",
+      "description": "An overview of key indicators influencing the cryptocurrency market.",
+      "url": "https://crypto-search.streamlit.app/",
       "github": "",
       "chains": ["Multi-chain"],
       "topics": ["Market Overview"],
       "tools": ["Streamlit"],
-      "image": "",
-      "date": "2026-10-01",
-      "featured": true
+      "image": "assets/crypto-search.png"
+    },
+    {
+      "title": "Arc Testnet Dashboard",
+      "description": "Real-time statistics fetched from Arc Testnet.",
+      "url": "https://arc-testnet.streamlit.app/",
+      "github": "",
+      "chains": ["Arc"],
+      "topics": ["Testnet", "Chain Overview"],
+      "tools": ["Streamlit"],
+      "image": "assets/arc-testnet.png"
     }
   ]
 }
