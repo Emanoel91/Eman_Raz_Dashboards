@@ -84,10 +84,9 @@ st.markdown(
 all_chains = sorted({c for d in dashboards for c in d.get("chains", [])})
 all_topics = sorted({t for d in dashboards for t in d.get("topics", [])})
 
-k1, k2, k3 = st.columns(3)
-k1.metric("Dashboards", len(dashboards))
-k2.metric("Chains covered", len(all_chains))
-k3.metric("Topics", len(all_topics))
+stats = [{"label": "Live dashboards", "value": len(dashboards)}] + profile.get("stats", [])
+for col, s in zip(st.columns(len(stats)), stats):
+    col.metric(s["label"], s["value"])
 
 st.divider()
 
