@@ -1,6 +1,7 @@
 {
   "profile": {
     "name": "Eman Raz",
+    "avatar": "https://pbs.twimg.com/profile_images/2060406047391559681/sA9zPNKM_400x400.jpg",
     "tagline": "Onchain Data Analyst since 2021 | Former Flipside Ambassador for Axelar",
     "bio": "Top 20 Flipside analyst with ~700 onchain dashboards built. Now building interactive Streamlit dashboards for Web3 ecosystems. Explore my recent work below.",
     "links": {
@@ -15,9 +16,30 @@
       {"label": "Flipside rank", "value": "Top 20"}
     ]
   },
+  "contact": {
+    "title": "Need a custom dashboard?",
+    "text": "Have a project and want a dashboard built around your protocol? Sitting on raw onchain data that deserves deep analysis? I turn raw data into clear, decision-ready insights, from tailored analytics dashboards to in-depth research for your ecosystem. Send me a message and let's talk.",
+    "button_label": "Message me on X",
+    "button_url": "https://x.com/0xeman_raz"
+  },
+  "support": {
+    "title": "Support my work",
+    "text": "If you find my dashboards useful and would like to support what I do, a tip is always appreciated. Thank you! 💙",
+    "wallets": [
+      {"coin": "BTC", "address": "bc1q7e9zzycg7v3jv9kwyyfh36fn6pyu66u2gl4qw8"},
+      {"coin": "EVM Wallet", "address": "0x621bd661e3d57da1c8237209824827f1027abf62"},
+      {"coin": "TRX", "address": "TQfmrWo9aruHca5F8mY9kGFmw9QWPeqDmG"},
+      {"coin": "XRP", "address": "rfxW1su8sUfMDgn2b4CHuJL7a2QCaFRuVU"},
+      {"coin": "DOGE", "address": "DLQp6B1uSg3q88HEPzs6LMmNRe9SfrnoTa"},
+      {"coin": "GRAM", "address": "UQDjWh05M38wVF2pGrJumg0p69nqzGTt0M4JSfKpZQgRObwA"},
+      {"coin": "SOL", "address": "5jgXpaVEoBsvVWseMts983PaDoDUNTzrJFfwhQLUGhsg"},
+      {"coin": "SUI", "address": "0x746efae6a71fa29b396354d853f93b441a0ef74997e6223a3ee9c6d0c2f99cd2"}
+    ]
+  },
   "dashboards": [
     {
       "title": "Axelar Mega Dashboard",
+      "logo": "https://images.cryptorank.io/coins/150x150.axelar1663924228506.png",
       "description": "End-to-end visibility into the Axelar ecosystem: a unified platform for tracking, analyzing and evaluating all cross-chain activity across Axelar.",
       "url": "https://axelar.streamlit.app/",
       "github": "",
@@ -29,6 +51,7 @@
     },
     {
       "title": "Base Blockchain",
+      "logo": "https://images.cryptorank.io/coins/150x150.base1752857325751.png",
       "description": "A comprehensive review of the Base blockchain.",
       "url": "https://base-chain.streamlit.app/",
       "github": "https://github.com/Emanoel91/Base-Chain",
@@ -40,6 +63,7 @@
     },
     {
       "title": "Ink Chain",
+      "logo": "https://polymarket-upload.s3.us-east-2.amazonaws.com/ink-fdv-above-one-day-after-launch-GWUvKMLWfZeY.png",
       "description": "A comprehensive review of the Ink blockchain.",
       "url": "https://ink-chain.streamlit.app/",
       "github": "",
@@ -51,6 +75,7 @@
     },
     {
       "title": "Axelarscan",
+      "logo": "https://images.cryptorank.io/coins/150x150.axelar1663924228506.png",
       "description": "Cross-chain transfer activity across blockchains integrated through Axelar's interoperability infrastructure.",
       "url": "https://axelarscan.streamlit.app/",
       "github": "",
@@ -61,6 +86,7 @@
     },
     {
       "title": "Axelar Master Dashboard",
+      "logo": "https://images.cryptorank.io/coins/150x150.axelar1663924228506.png",
       "description": "A comprehensive view of the Axelar ecosystem.",
       "url": "https://axelar-master-dashboard.streamlit.app/",
       "github": "",
@@ -71,6 +97,7 @@
     },
     {
       "title": "Blockwatch",
+      "logo": "https://raw.githubusercontent.com/Emanoel91/blockwatch/main/logo_blockwatch_no_text.png",
       "description": "A unified view of key performance, activity and market metrics across multiple blockchains, to monitor critical network statistics.",
       "url": "https://blockwatch.streamlit.app/",
       "github": "",
@@ -81,6 +108,7 @@
     },
     {
       "title": "Squid",
+      "logo": "https://images.cryptorank.io/coins/150x150.squid1675241862798.png",
       "description": "Squid's cross-chain swap activity: transfer volume and transaction counts into, out of and within each chain, and which chains lead on each metric.",
       "url": "https://squid-dashboard.streamlit.app/",
       "github": "",
@@ -91,6 +119,7 @@
     },
     {
       "title": "Daily Stats on Squid Router",
+      "logo": "https://images.cryptorank.io/coins/150x150.squid1675241862798.png",
       "description": "Performance of the Squid bridge over the past 24 hours, with continuously updated data.",
       "url": "https://daily-stats-on-squid-router.streamlit.app/",
       "github": "",
@@ -101,6 +130,7 @@
     },
     {
       "title": "Crypto-Search Dashboard",
+      "logo": "https://images.cryptorank.io/coins/150x150.bitcoin1524754012028.png",
       "description": "An overview of key indicators influencing the cryptocurrency market.",
       "url": "https://crypto-search.streamlit.app/",
       "github": "",
@@ -111,6 +141,7 @@
     },
     {
       "title": "Arc Testnet Dashboard",
+      "logo": "https://images.cryptorank.io/coins/150x150.arc1755596336233.png",
       "description": "Real-time statistics fetched from Arc Testnet.",
       "url": "https://arc-testnet.streamlit.app/",
       "github": "",
